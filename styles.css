@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  width: 100%;
+}
+
+button {
+  background-color: red;
+  width: 100px;
+}
