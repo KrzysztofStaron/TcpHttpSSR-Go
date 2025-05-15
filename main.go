@@ -46,13 +46,15 @@ func handleConnection(conn net.Conn) {
 		return
 	}
 
-	counter++
-
+	if path == "/app.html" {
+		counter++
+	}
+	
 	println(path)
 
 	content := readFile("." + path)
 
-	content = ssr(content, "{counter}", counter)
+	content = ssr(content, "<counter />", counter)
 
 	response := createResponse(content)
 
